@@ -66,5 +66,18 @@ fun SettingsList(
             checked = state.hintsEnabled,
             onShowHintsToggled = viewModel::toggleHintSettings
         )
+        Divider()
+        ManageSubscriptionSettingItem(
+            modifier = Modifier.fillMaxWidth(),
+            title = stringResource(id = R.string.setting_manage_subscription),
+            onSettingClicked = { /* Handle setting click */ }
+        )
+        SectionSpacer(modifier = Modifier.fillMaxWidth())
+        MarketingSettingItem(
+            modifier = Modifier.fillMaxWidth(),
+            selectedOption = state.marketingOption,
+            onOptionSelected = viewModel::setMarketingSettings
+        )
+        Divider()
     }
 }
